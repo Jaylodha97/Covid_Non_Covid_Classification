@@ -4,11 +4,11 @@ This is my First Repository on Github.
 
 For my first time, i decided to train a Dense Net 121 model (with a few extra Dense layers with Dropout) to classify CT scan images as belonging to the "Covid" or "Non_Covid" category. I trained my model on the publicly available Sars-Cov-2 Ct scan dataset (Link for the same available inside model training notebook).
 
-I have also developed my first API using the Fast API framework. This API has two main endpoints: One which simply accepts a CT scan image and returns its class i.e. it's category, Second endpoint can be used to evaluate the model wholly as it returns all the imperative metrics of the model such as precision, recall, etc. Note: there is a test folder inside the data folder (This folder was not used during training or evaluation of the model) which could be used for the purpose of evaluation. One can also use a custom dataset for the same, only constraint being that it should follow a certain format - inside the root folder, there should be two directories namely "COVID" and "NON_COVID" with their respective images inside of it.
+I have also developed my first API using the Fast API framework. This API has two main endpoints: One which simply accepts a CT scan image and returns its class i.e. it's category, Second endpoint can be used to evaluate the model wholly as it returns all the imperative metrics of the model such as precision, recall, etc. Note: a test folder link is there (This folder was not used during training or evaluation of the model) which could be used for the purpose of evaluation. One can also use a custom dataset for the same, only constraint being that it should follow a certain format - inside the root folder, there should be two directories namely "COVID" and "NON_COVID" with their respective images inside of it.
 
 I'm also planning to deploy the api using the Heroku platform. Will update the repository accordingly.
 
-I have uploaded two weight files, both models were trained using the same base model.
+https://drive.google.com/drive/folders/1UNNpvKAwHEFK5qomQix542QACw6cJ6Qc?usp=sharing : This has the model weights along with the additional test set folder.
 
 Now, Steps to follow in order to host the API on your local computer/laptop: (Note all these commands need to be run on a terminal/cmd)
 1. Change the path to the project directory. (eg: cd <path of the project directory>)
@@ -39,7 +39,7 @@ Note: we have two options here "a" and "b"
 Option a: If you want to get an image or few images classified, this will be a good option. This option will create a new folder named "Custom" along with sub directories "Covid" and "non-Covid" and save the images in the respective folder based on how the model classifies them.
 
 Option b: If you want to comprehend the overall performance of the model i.e. look at its evaluation metrics, this option will help you for that.
-Note: You can either use the test set (This dataset was not used during model training) which is already uploaded inside the data folder or can use your custom dataset with one caveat - You need to make sure that inside the base directory, you have two folders named "COVID" and "NON_COVID" with their corresponding CT scan images.
+Note: You can either use the test set (Link for the same is present above) or can use your custom dataset with one caveat - You need to make sure that inside the base directory, you have two folders named "COVID" and "NON_COVID" with their corresponding CT scan images.
 
 2. if Option a is set in the --choice argument, you need to provide the image path or folder path, and they will get saved in the custom folder accordingly.
 

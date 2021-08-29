@@ -6,7 +6,10 @@ For my first time, i decided to train a Dense Net 121 model (with a few extra De
 
 I have also developed my first API using the Fast API framework. This API has two main endpoints: One which simply accepts a CT scan image and returns its class i.e. it's category, Second endpoint can be used to evaluate the model wholly as it returns all the imperative metrics of the model such as precision, recall, etc. Note: a test folder link is there (This folder was not used during training or evaluation of the model) which could be used for the purpose of evaluation. One can also use a custom dataset for the same, only constraint being that it should follow a certain format - inside the root folder, there should be two directories namely "COVID" and "NON_COVID" with their respective images inside of it.
 
-I'm also planning to deploy the api using the Heroku platform. Will update the repository accordingly.
+Model Stats (Model loss and accuracy on the train and val set):
+![Screenshot](docs/Model_stats.jpg)
+
+More Info about Model training can be found inside the notebook called "Model_training.ipynb"
 
 https://drive.google.com/drive/folders/1UNNpvKAwHEFK5qomQix542QACw6cJ6Qc?usp=sharing : This has the model weights along with the additional test set folder.
 

@@ -18,9 +18,9 @@ def get_class_name(image_path):
     with open(image_path, "rb") as f:
         r = requests.post(
             "http://127.0.0.1:8000/get_image_class",
-            file_names={"file_name": (os.path.basename(image_path), f)},
+            files={"file": (os.path.basename(image_path), f)},
         )
-    print(r.text)
+    # print(r.text)
     out = json.loads(r.text)
 
     return out
@@ -95,7 +95,7 @@ def main():
         os.makedirs("./Custom/Covid", exist_ok=True)
         os.makedirs("./Custom/non-Covid", exist_ok=True)
 
-        if os.path.isfile_name(input_path):
+        if os.path.isfile(input_path):
             print("Found the file_name passed")
 
             if (
@@ -109,12 +109,10 @@ def main():
                 class_name = get_class_name(input_path)
                 print(class_name)
                 if class_name["Class"] == "Covid":
-                    shutil.copyfile_name(
-                        input_path, os.path.join("./Custom/Covid", name)
-                    )
+                    shutil.copyfile(input_path, os.path.join("./Custom/Covid", name))
 
                 else:
-                    shutil.copyfile_name(
+                    shutil.copyfile(
                         input_path, os.path.join("./Custom/non-Covid", name)
                     )
 
@@ -139,13 +137,13 @@ def main():
                     class_name = get_class_name(os.path.join(input_path, file_name))
                     print(class_name)
                     if class_name["Class"] == "Covid":
-                        shutil.copyfile_name(
+                        shutil.copyfile(
                             os.path.join(input_path, file_name),
                             os.path.join("./Custom/Covid", file_name),
                         )
 
                     else:
-                        shutil.copyfile_name(
+                        shutil.copyfile(
                             os.path.join(input_path, file_name),
                             os.path.join("./Custom/non-Covid", file_name),
                         )
@@ -167,7 +165,7 @@ def main():
         print("\n")
         metrics = get_model_metrics(covid_images, non_covid_images, data_path)
         print("Model Metrics: ")
-        print("\n")
+
         print(f"Accuracy: {metrics['Model_accuracy']}")
         print(f"Precision: {metrics['Model Precision']}")
         print(f"Recall: {metrics['Model Recall']}")

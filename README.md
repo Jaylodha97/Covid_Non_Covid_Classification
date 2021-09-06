@@ -13,7 +13,7 @@ More Info about Model training can be found inside the notebook called "Model_tr
 
 https://drive.google.com/drive/folders/1UNNpvKAwHEFK5qomQix542QACw6cJ6Qc?usp=sharing : This has the model weights along with the additional test set folder.
 
-Now, Steps to follow in order to host the API on your local computer/laptop: (Note all these commands need to be run on a terminal/cmd)
+Now, Steps to follow in order to host the API on your local computer/laptop: (Note all these commands need to be executed on a terminal/cmd)
 1. Change the path to the project directory. (eg: cd <path of the project directory>)
 
 1. Create a virtual environment so that you can download all the required packages.
